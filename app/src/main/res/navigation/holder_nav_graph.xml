@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/holder_nav_graph"
+    app:startDestination="@id/tabFragment2">
+
+    <fragment
+        android:id="@+id/tabFragment2"
+        android:name="com.example.muslimchecklistmobile.content.TabFragment"
+        android:label="fragment_tab"
+        tools:layout="@layout/fragment_tab" >
+        <action
+            android:id="@+id/action_tabFragment2_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_tabFragment2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_tabFragment2_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_tabFragment2_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_tabFragment2_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_tabFragment2_to_ishaFragment2"
+            app:destination="@id/ishaFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_fajrFragment2"
+            app:destination="@id/fajrFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_duhaFragment2"
+            app:destination="@id/duhaFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_beforeFragment2"
+            app:destination="@id/beforeFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_nightFragment2"
+            app:destination="@id/nightFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_morningFragment2"
+            app:destination="@id/morningFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_asrFragment2"
+            app:destination="@id/asrFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_zhrFragment2"
+            app:destination="@id/zhrFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_maghrebFragment2"
+            app:destination="@id/maghrebFragment2" />
+        <action
+            android:id="@+id/action_tabFragment2_to_login_nav_graph"
+            app:destination="@id/login_nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.muslimchecklistmobile.content.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_profileFragment2"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_login_nav_graph"
+            app:destination="@id/login_nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.muslimchecklistmobile.content.setting.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_aboutFragment_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.muslimchecklistmobile.content.setting.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_helpFragment_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.muslimchecklistmobile.content.setting.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/action_languageFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_languageFragment_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.muslimchecklistmobile.content.setting.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/asrFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.prayers.AsrFragment"
+        android:label="fragment_asr"
+        tools:layout="@layout/fragment_asr" >
+        <action
+            android:id="@+id/action_asrFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/morningFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.supplications.MorningFragment"
+        android:label="MorningFragment" >
+        <action
+            android:id="@+id/action_morningFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/nightFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.supplications.NightFragment"
+        android:label="NightFragment" >
+        <action
+            android:id="@+id/action_nightFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/beforeFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.supplications.BeforeFragment"
+        android:label="fragment_before"
+        tools:layout="@layout/fragment_before" >
+        <action
+            android:id="@+id/action_beforeFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/duhaFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.prayers.DuhaFragment"
+        android:label="fragment_duha"
+        tools:layout="@layout/fragment_duha" >
+        <action
+            android:id="@+id/action_duhaFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fajrFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.prayers.FajrFragment"
+        android:label="fragment_fajr"
+        tools:layout="@layout/fragment_fajr" >
+        <action
+            android:id="@+id/action_fajrFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/ishaFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.prayers.IshaFragment"
+        android:label="fragment_isha"
+        tools:layout="@layout/fragment_isha" >
+        <action
+            android:id="@+id/action_ishaFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/zhrFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.prayers.ZhrFragment"
+        android:label="fragment_zhr"
+        tools:layout="@layout/fragment_zhr" >
+        <action
+            android:id="@+id/action_zhrFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/maghrebFragment2"
+        android:name="com.example.muslimchecklistmobile.content.home.prayers.MaghrebFragment"
+        android:label="fragment_maghreb"
+        tools:layout="@layout/fragment_maghreb" >
+        <action
+            android:id="@+id/action_maghrebFragment2_to_tabFragment2"
+            app:destination="@id/tabFragment2" />
+    </fragment>
+    <include app:graph="@navigation/login_nav_graph" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.muslimchecklistmobile.content.setting.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" >
+        <action
+            android:id="@+id/action_changePasswordFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>

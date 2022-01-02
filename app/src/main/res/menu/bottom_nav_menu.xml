@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:title="الرئيسية"
+        android:icon="@drawable/home_"/>
+    <item
+        android:id="@+id/menu_day"
+        android:title="اليوم"
+        android:icon="@drawable/today_"/>
+    <item
+        android:id="@+id/menu_settings"
+        android:title="الاعدادات"
+        android:icon="@drawable/settings_"/>
+</menu>

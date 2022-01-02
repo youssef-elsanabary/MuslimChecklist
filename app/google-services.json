@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "498711773671",
+    "project_id": "muslimchecklist-5235e",
+    "storage_bucket": "muslimchecklist-5235e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498711773671:android:f80c122ce2aca9282c7d42",
+        "android_client_info": {
+          "package_name": "com.example.muslimchecklistmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498711773671-8vqmt38i8mfjutojmtq1v85ch51rl3it.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCHe6ULgJmNx_TscvrIo4pZ5AodhFWaSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498711773671-8vqmt38i8mfjutojmtq1v85ch51rl3it.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MuslimChecklistMobile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="start" translatable="false">ابدا الان</string>
+    <string name="welcome" translatable="false">اهلا بك من جديد</string>
+    <string name="signin" translatable="false">سجل دخولك الان للاستمرار</string>
+    <string name="phoneNumber" translatable="false">رقم الهاتف</string>
+    <string name="paasword" translatable="false">كلمة المرور</string>
+    <string name="forgetPassword" translatable="false">نسيت كلمة المرور؟</string>
+    <string name="alreadyHaveAccount" translatable="false">ليس لديك حساب؟</string>
+    <string name="register" translatable="false">سجل الان</string>
+</resources>
