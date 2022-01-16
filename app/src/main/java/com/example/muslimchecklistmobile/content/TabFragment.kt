@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
 import com.example.muslimchecklistmobile.R
 import com.example.muslimchecklistmobile.content.days.DayFragment
 import com.example.muslimchecklistmobile.content.home.HomeFragment
 import com.example.muslimchecklistmobile.content.setting.SettingFragment
-import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_tab.*
@@ -23,15 +21,7 @@ class TabFragment : Fragment() {
     var database: FirebaseFirestore = FirebaseFirestore.getInstance()
     var currentUser = auth.currentUser
     var uid = currentUser!!.uid
-    lateinit var viewPager2 : ViewPager2
-    lateinit var tabLayout: TabLayout
-    var tabTitle = arrayOf("الرئيسية","التقارير","اليوم","الاعدادات")
-    var tabIcon = arrayOf(R.drawable.home_,R.drawable.reports_,R.drawable.today_,R.drawable.settings_)
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

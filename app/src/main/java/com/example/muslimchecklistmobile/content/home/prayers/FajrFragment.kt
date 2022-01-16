@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.muslimchecklistmobile.R
 import com.example.muslimchecklistmobile.content.Data
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,7 +21,7 @@ class FajrFragment : Fragment() {
     var database: FirebaseFirestore = FirebaseFirestore.getInstance()
     var currentUser = auth.currentUser
     var uid = currentUser!!.uid
-    val dataClass = Data()
+    private val dataClass = Data()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,16 +38,17 @@ class FajrFragment : Fragment() {
         fajr_date.text = currentDate
 
         database.collection("App Users").document(uid).collection("Dates").document(currentDate)
-            .get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { documentSnapshot ->
+            .get().addOnCompleteListener { documentSnapshot ->
                 if (documentSnapshot.isSuccessful) {
                     val docs: DocumentSnapshot = documentSnapshot.result!!
-                    if (docs.get("Fajr") != null)
-                    { fajr_prayer_tbtn.setBackgroundResource(R.drawable.check)
+                    if (docs.get("Fajr") != null) {
+                        fajr_prayer_tbtn.setBackgroundResource(R.drawable.check)
                     }
                     if (docs.get("Sona_Fajr") != null) {
                         fajr_sunah_tbtn.setBackgroundResource(R.drawable.check)
                     }
-                } } )
+                }
+            }
 
         fajr_close.setOnClickListener {
             findNavController().navigateUp()

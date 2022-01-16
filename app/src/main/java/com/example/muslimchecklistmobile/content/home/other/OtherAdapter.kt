@@ -7,20 +7,18 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.muslimchecklistmobile.R
-import com.example.muslimchecklistmobile.content.home.supplications.SupplicationAdapter
-
 class OtherAdapter(private val otherAdapterClickListener:OtherAdapterClickListener ) : RecyclerView.Adapter<OtherAdapter.ViewHolder>() {
 
     interface OtherAdapterClickListener{
         fun onOtherClick(position: Int)
     }
 
-    var img = arrayOf( R.drawable.fasting, R.drawable.ablution,R.drawable.quran)
+    private var img = arrayOf( R.drawable.fasting, R.drawable.ablution,R.drawable.quran)
     var text = arrayOf("الصيام","الوضوء قبل النوم","االقرءان")
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var item_Img = itemView.findViewById<ImageView>(R.id.other_img)
-        var item_Txt = itemView.findViewById<TextView>(R.id.other_text)
+        var item_Img = itemView.findViewById<ImageView>(R.id.other_img)!!
+        var item_Txt = itemView.findViewById<TextView>(R.id.other_text)!!
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

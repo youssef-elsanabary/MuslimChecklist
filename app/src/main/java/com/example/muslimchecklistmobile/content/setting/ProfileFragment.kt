@@ -31,7 +31,7 @@ import java.io.*
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "DEPRECATION")
 class ProfileFragment : Fragment() {
 
-    lateinit var imageUri: Uri
+    private lateinit var imageUri: Uri
     lateinit var auth: FirebaseAuth
     lateinit var database: FirebaseFirestore
     private lateinit var storageReference :StorageReference

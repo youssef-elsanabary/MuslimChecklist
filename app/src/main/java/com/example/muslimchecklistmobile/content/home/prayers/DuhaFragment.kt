@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.muslimchecklistmobile.R
 import com.example.muslimchecklistmobile.content.Data
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -23,10 +22,6 @@ class DuhaFragment : Fragment() {
     var currentUser = auth.currentUser
     var uid = currentUser!!.uid
     val dataClass = Data()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,12 +29,14 @@ class DuhaFragment : Fragment() {
             SimpleDateFormat("yyyy-MM-d", Locale.getDefault()).format(Date())
         duha_date.text = currentDate
         database.collection("App Users").document(uid).collection("Dates").document(currentDate)
-            .get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { documentSnapshot ->
+            .get().addOnCompleteListener { documentSnapshot ->
                 if (documentSnapshot.isSuccessful) {
                     val docs: DocumentSnapshot = documentSnapshot.result!!
-                            if (docs.get("Duha") != null) {
-                                duha_prayer_tbtn.setBackgroundResource(R.drawable.check)
-                            } } })
+                    if (docs.get("Duha") != null) {
+                        duha_prayer_tbtn.setBackgroundResource(R.drawable.check)
+                    }
+                }
+            }
 
         duha_close.setOnClickListener {
             findNavController().navigateUp()

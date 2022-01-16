@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.muslimchecklistmobile.R
 import com.example.muslimchecklistmobile.content.Data
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -21,12 +20,7 @@ class MaghrebFragment : Fragment() {
     var database: FirebaseFirestore = FirebaseFirestore.getInstance()
     var currentUser = auth.currentUser
     var uid = currentUser!!.uid
-    val dataClass = Data()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private val dataClass = Data()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,16 +30,17 @@ class MaghrebFragment : Fragment() {
         maghreb_date.text = currentDate
 
         database.collection("App Users").document(uid).collection("Dates").document(currentDate)
-            .get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { documentSnapshot ->
+            .get().addOnCompleteListener { documentSnapshot ->
                 if (documentSnapshot.isSuccessful) {
                     val docs: DocumentSnapshot = documentSnapshot.result!!
-                            if (docs.get("Sona_Maghreb") != null) {
-                                maghreb_sunah.setBackgroundResource(R.drawable.check)
-                            }
-                            if (docs.get("Maghreb") != null) {
-                                maghreb_prayer_tbtn.setBackgroundResource(R.drawable.check)
-                            }
-                      } })
+                    if (docs.get("Sona_Maghreb") != null) {
+                        maghreb_sunah.setBackgroundResource(R.drawable.check)
+                    }
+                    if (docs.get("Maghreb") != null) {
+                        maghreb_prayer_tbtn.setBackgroundResource(R.drawable.check)
+                    }
+                }
+            }
 
 
         maghreb_close.setOnClickListener {

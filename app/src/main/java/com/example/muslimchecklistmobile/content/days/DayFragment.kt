@@ -26,7 +26,7 @@ class DayFragment : Fragment() {
     var currentUser = auth.currentUser
     var uid = currentUser!!.uid
 
-    fun checkIfPrayed(prayValue: Any?, btnName: ImageView) {
+    private fun checkIfPrayed(prayValue: Any?, btnName: ImageView) {
         if (prayValue != null) {
             btnName.setBackgroundResource(R.drawable.check)
         } else {
@@ -37,7 +37,7 @@ class DayFragment : Fragment() {
     fun checkIfPrayAll() {
         getFBData { docs ->
             if (docs!!.exists()) {
-                val prog = docs!!.data
+                val prog = docs.data
                 val progressCount = prog!!.size
                 day_progress.progress = progressCount
                 val progressValue = day_progress.progress
@@ -63,8 +63,8 @@ class DayFragment : Fragment() {
 
     @SuppressLint("NewApi")
     fun getFBData(success: (DocumentSnapshot?) -> Unit) {
-        var day: Day = weekCalendar?.selectedDay!!
-        var selected = "${day.year}-0${day.month + 1}-${day.day}"
+        val day: Day = weekCalendar?.selectedDay!!
+        val selected = "${day.year}-0${day.month + 1}-${day.day}"
         Log.d("TAG", "$selected ")
         database.collection("App Users").document(uid).collection("Dates").document(
             selected)
@@ -74,10 +74,6 @@ class DayFragment : Fragment() {
                     success(docs)
                 }
             }
-    }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(

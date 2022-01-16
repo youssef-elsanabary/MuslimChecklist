@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.muslimchecklistmobile.R
 import com.example.muslimchecklistmobile.content.Data
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,12 +21,7 @@ class IshaFragment : Fragment() {
     var database: FirebaseFirestore = FirebaseFirestore.getInstance()
     var currentUser = auth.currentUser
     var uid = currentUser!!.uid
-    val dataClass = Data()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private val dataClass = Data()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,15 +30,17 @@ class IshaFragment : Fragment() {
             SimpleDateFormat("yyyy-MM-d", Locale.getDefault()).format(Date())
         isha_date.text = currentDate
         database.collection("App Users").document(uid).collection("Dates").document(currentDate)
-            .get().addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { documentSnapshot ->
+            .get().addOnCompleteListener { documentSnapshot ->
                 if (documentSnapshot.isSuccessful) {
                     val docs: DocumentSnapshot = documentSnapshot.result!!
-                            if (docs.get("Sona_Isha") != null) {
-                                isha_sunah_btn.setBackgroundResource(R.drawable.check)
-                            }
-                            if (docs.get("Isha") != null) {
-                                isha_prayer_tbtn.setBackgroundResource(R.drawable.check)
-                            }} })
+                    if (docs.get("Sona_Isha") != null) {
+                        isha_sunah_btn.setBackgroundResource(R.drawable.check)
+                    }
+                    if (docs.get("Isha") != null) {
+                        isha_prayer_tbtn.setBackgroundResource(R.drawable.check)
+                    }
+                }
+            }
 
 
         isha_close.setOnClickListener {

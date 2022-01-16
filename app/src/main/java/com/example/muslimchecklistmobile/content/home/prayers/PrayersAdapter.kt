@@ -14,8 +14,8 @@ class PrayersAdapter(private val prayersAdapterClickListener: PrayersAdapterClic
     interface PrayersAdapterClickListener{
         fun onItemClick(position :Int)
     }
-    inner class ViewHolder (itemView :View ,) :RecyclerView.ViewHolder(itemView) {
-        var itemImage = itemView.findViewById<ImageView>(R.id.prayers_image)
+    inner class ViewHolder (itemView :View) :RecyclerView.ViewHolder(itemView) {
+        var itemImage = itemView.findViewById<ImageView>(R.id.prayers_image)!!
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.prayers_list_item,parent,false)
